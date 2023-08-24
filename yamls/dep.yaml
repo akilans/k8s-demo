@@ -18,13 +18,7 @@ spec:
         app: nginx-dep
     spec:
       containers:
-      - image: nginx
+      - image: akilan/nginx-hello:v1
         name: nginx
         resources: {}
-        env:
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysecrets
-              key: MY_PWD
 status: {}

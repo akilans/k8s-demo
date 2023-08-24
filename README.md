@@ -19,7 +19,7 @@
 
 ### Setup Kubernetes Cluster
 
-- Locally - ![Minikube](https://minikube.sigs.k8s.io/docs/), ![Kind](https://kind.sigs.k8s.io/), kubeadm
+- Locally - [Minikube](https://minikube.sigs.k8s.io/docs/), [Kind](https://kind.sigs.k8s.io/), kubeadm
 - Cloud - AWS EKS, Azure AKS, GCP GKE
 
 ### Kubernetes Important Resources

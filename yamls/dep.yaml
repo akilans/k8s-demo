@@ -21,4 +21,10 @@ spec:
       - image: nginx
         name: nginx
         resources: {}
+        env:
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysecrets
+              key: MY_PWD
 status: {}

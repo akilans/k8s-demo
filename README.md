@@ -27,10 +27,13 @@
 - Pod
 - Deployment
 - Service
-- Secrets
-- ConfigMap
 
 ### Demo
+
+- Self healing
+- Scaling
+- Service and Load balancing
+- Update deployment
 
 ```bash
 # Install minikube and start
@@ -48,6 +51,7 @@ kubectl delete pod nginx
 # Deployment
 kubectl create deployment nginx-dep --image nginx --replicas 3
 # delete any pod
+# different types of svc ClusterIP inside k8s, NodePort, LoadBalancer
 # Access the app
 kubectl expose deployment nginx-dep --type NodePort --port 80
 # get svc
@@ -63,4 +67,12 @@ kubectl create deployment nginx-dep --image nginx --replicas 3 --dry-run=client 
 kubectl apply -f yamls/dep.yaml
 # check pods, dep
 kubectl expose deployment nginx-dep --type NodePort --port 80 --dry-run=client -o yaml > yamls/svc.yaml
+# scale
+kubectl scale deployment nginx-dep --replicas 1
+
+# service discovery
+kubectl create deployment my-apache --image httpd --replicas 2
+kubectl expose deployment my-apache --type ClusterIP --port 80
+# kubectl get svc
+# login into nginx and curl http://my-apache
 ```
